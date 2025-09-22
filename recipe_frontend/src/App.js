@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SignIn from './components/SignIn';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -16,9 +16,15 @@ function App() {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  const handleSubmit = (data) => {
+    // placeholder for integration
+    // eslint-disable-next-line no-console
+    console.log('App received sign-in submit', data);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{ paddingTop: 72 }}>
         <button 
           className="theme-toggle" 
           onClick={toggleTheme}
@@ -26,21 +32,7 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SignIn onSubmit={handleSubmit} />
       </header>
     </div>
   );

@@ -1,0 +1,297 @@
+:root {
+  --ocean-primary: #2563EB; /* blue-600 */
+  --ocean-secondary: #F59E0B; /* amber-500 */
+  --ocean-error: #EF4444;
+  --ocean-surface: #ffffff;
+  --ocean-bg: #f9fafb;
+  --ocean-text: #111827;
+  --ocean-muted: #6b7280;
+  --ocean-border: #e5e7eb;
+
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Root screen container resembling a mobile card centered on page */
+.screen {
+  width: 100%;
+  max-width: 375px; /* mirrors Figma width */
+  background: var(--ocean-surface);
+  border-radius: 30px;
+  box-shadow: var(--shadow-md);
+  padding: 16px 20px 24px 20px;
+  margin: 24px auto;
+  color: var(--ocean-text);
+  position: relative;
+}
+
+/* Additional card class for clarity */
+.card {}
+
+/* Status bar mimic for spacing; minimalist */
+.statusBar {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--ocean-muted);
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.statusTime {
+  font-family: "SF Pro Display", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 500;
+}
+.statusIcons {
+  width: 60px;
+  height: 12px;
+  background: linear-gradient(90deg, #d1d5db 0%, #9ca3af 100%);
+  border-radius: 6px;
+}
+
+.headerGroup {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+.hello {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 45px;
+  margin: 0;
+}
+.welcome {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+  color: #121212;
+}
+
+.form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #121212;
+}
+
+.input {
+  height: 48px;
+  border: 1.5px solid var(--ocean-border);
+  border-radius: var(--radius-md);
+  padding: 0 14px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ocean-text);
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.input::placeholder {
+  color: #9CA3AF;
+}
+.input:focus {
+  border-color: var(--ocean-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.forgotLink {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--ocean-secondary);
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+}
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+.primaryCta {
+  margin-top: 8px;
+  height: 56px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--ocean-primary);
+  color: #fff;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.1s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+.primaryCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+.primaryCta:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+.primaryCta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.ctaIcon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+}
+.ctaIcon::before,
+.ctaIcon::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+}
+.ctaIcon::before {
+  left: 2px;
+  top: 8px;
+  width: 12px;
+  height: 2px; /* horizontal line */
+  border-radius: 1px;
+}
+.ctaIcon::after {
+  right: 2px;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 2px 0;
+}
+.line {
+  flex: 1;
+  height: 1px;
+  background: var(--ocean-border);
+}
+.dividerText {
+  color: #9CA3AF;
+  font-size: 12px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+.socialTile {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 0 5px 3px rgba(105, 105, 105, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+.socialTile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+  border-radius: 4px;
+}
+.googleIcon::before,
+.googleIcon::after {
+  content: "";
+  position: absolute;
+}
+.googleIcon {
+  background: #fff;
+  border: 1px solid #eee;
+}
+.googleIcon::before {
+  left: 2px; top: 2px; right: 2px; bottom: 2px;
+  background:
+    linear-gradient(#FFC107, #FFC107) top/100% 50% no-repeat,
+    linear-gradient(#4CAF50, #4CAF50) bottom/100% 50% no-repeat;
+  border-radius: 3px;
+}
+.googleIcon::after {
+  right: 3px; top: 6px; width: 10px; height: 10px;
+  background: #1976D2;
+  border-radius: 2px;
+}
+
+.facebookIcon {
+  background: #035B81;
+}
+
+.footer {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.footerText {
+  color: var(--ocean-text);
+}
+.signUpLink {
+  border: none;
+  background: transparent;
+  color: var(--ocean-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+.signUpLink:hover {
+  text-decoration: underline;
+}
+
+/* Home indicator */
+.homeIndicator {
+  width: 135px;
+  height: 5px;
+  background: #121212;
+  border-radius: 100px;
+  opacity: 0.9;
+  margin: 18px auto 0 auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .screen {
+    margin: 12px;
+    border-radius: 24px;
+  }
+}
